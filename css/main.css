@@ -18,6 +18,8 @@ body {
     font-size: small;
     text-align: center;
 
+    padding-left: 50px;
+    padding-right: 50px;
     padding-top: 70px;
 }
 
@@ -128,16 +130,31 @@ a:visited { color: #a0a; }
     min-height: 70px;
 }
 
+.navbar .container-fluid {
+    margin-left: 50px;
+    width: 1170px;
+}
+
 .navbar-nav > li > a {
     padding-top: 25px;
     padding-bottom: 25px;
 }
 
-.navbar-default .navbar-nav > .active > a {
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > li > a
+{
     background-color: #14181c;
     color: #37c3bb;
     font-weight: bold;
 }
+
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > li > a:hover
+{
+    color: #555;
+    background-color: #e7e7e7;
+}
+
 /*****************************************************************************/
 /*
 /* Posts
@@ -174,4 +191,12 @@ a:visited { color: #a0a; }
 
 .post pre.terminal code {
     background-color: #333;
+}
+
+.post > .header > h1 {
+    margin-bottom: 10px;
+}
+
+.post > .header > .meta {
+    padding-bottom: 25px;
 }

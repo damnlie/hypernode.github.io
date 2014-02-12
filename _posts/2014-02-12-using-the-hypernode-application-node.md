@@ -4,8 +4,6 @@ title:  "Hypernode Application Node Manual"
 date:   2014-02-12 11:55:03
 categories: manual usage
 ---
-# Hypernode Application Node Manual
-
 ## Uploading data
 
 ### Uploading files
