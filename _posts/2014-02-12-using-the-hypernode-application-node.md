@@ -30,7 +30,7 @@ MySQL is open at port `3306`. Use your credentials to connect.
 There are several logs for you to access:
 
 Logtype | Location
--|-
+--- | ---
 Web logs | `/var/log/nginx/access.log`
 Web error logs | `/var/log/nginx/error.log`
 PHP logs | Not yet provided
