@@ -49,6 +49,15 @@
         <div class="contact">
             Hypernode by <a href="http://www.byte.nl">Byte</a>
         </div>
+        {% if page.categories %}
+        <div class="pull-right" id="categories">
+            <ul>Categories:
+                {% for category in page.categories %}
+                    <li>{{ category }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
     </div>
 </div>
 
