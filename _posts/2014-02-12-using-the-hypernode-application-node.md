@@ -10,7 +10,7 @@ categories: manual usage
 
 * The documentroot for web files is `/data/web/public/`.
 * Place configuration files or secret files outside of your documentroot in `/data/web/`.
-* Use one of the SSH-based file transfer protocols below to upload files.
+* Use one of the SSH-based file transfer protocols below to upload files. Use `app` as username and `<tag>.hypernode.io` as server address.
     * SFTP
     * SCP
     * rsync
@@ -41,7 +41,7 @@ See [Using MySQL on Hypernode]({% post_url 2014-02-12-using-mysql-on-hypernode %
 
 ## Using Redis
 
-* Redis runs on `localhost.
+* Redis runs on `redismaster1.<tag>.hypernode.io`.
 * It runs on port `6379`.
 * There is no need for a password.
 * We've predefined databases `db0` and `db1` so you can flush sessions and key seperately.

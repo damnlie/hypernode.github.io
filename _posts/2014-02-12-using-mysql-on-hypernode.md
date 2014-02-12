@@ -10,7 +10,7 @@ Your MySQL credentials are stored in the homedir of application user. You find t
 
 ```ini
 [client]
-host = mysqlmaster1.tagname.hypernode.io
+host = mysqlmaster1.<tagname>.hypernode.io
 user = app
 password = JlogA1Sws6XMHmAj7QlP9vpfjLprtpE5
 ```
@@ -40,7 +40,7 @@ mysql
 Use your credentials to connect like so:
 
 ```bash
-mysql --host=mysqlmaster1.tagname.hypernode.io --user=app --password=mypassword
+mysql --host=mysqlmaster1.<tagname>.hypernode.io --user=app --password=mypassword
 ```
 
 
