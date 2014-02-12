@@ -3,6 +3,7 @@ layout: post
 title:  "Hypernode Application Node Manual"
 date:   2014-02-12 11:55:03
 categories: manual usage
+excerpt: "A short manual covering how to use SSH, how to upload files, how to use Redis, etc."
 ---
 ## Uploading data
 

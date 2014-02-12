@@ -3,6 +3,8 @@ layout: post
 title:  "Using MySQL on the Hypernode Application Node"
 date:   2014-02-12 11:55:03
 categories: manual usage mysql
+excerpt: "What you need to know about using MySQL on Hypernode.
+How to find your credentials and how to create and use databases."
 ---
 ## Finding your credentials
 
