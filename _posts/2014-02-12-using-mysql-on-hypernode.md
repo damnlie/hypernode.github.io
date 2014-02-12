@@ -2,7 +2,7 @@
 layout: post
 title:  "Using MySQL on the Hypernode Application Node"
 date:   2014-02-12 11:55:03
-categories: manual usage mysql heidisql
+categories: manual usage mysql
 ---
 ## Finding your credentials
 
