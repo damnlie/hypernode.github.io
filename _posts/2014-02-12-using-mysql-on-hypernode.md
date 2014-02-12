@@ -15,7 +15,18 @@ user = app
 password = JlogA1Sws6XMHmAj7QlP9vpfjLprtpE5
 ```
 
-## Using the command line shell on the production node
+## What you should know
+
+* There is no predefined database, so you should create your own.
+* The `app` user is the local superuser. This means you can (among other things):
+    * can create your own databases;
+    * create users;
+    * define views and triggers.
+
+
+## How to connect to MySQL
+
+### Using the command line shell on the production node
 
 Because we've provided a `~/.my.cnf`, you're all set to go. Just type `mysql` and you're in.
 
@@ -24,7 +35,7 @@ mysql
 ```
 
 
-## Using the command line shell from a remote host
+### Using the command line shell from a remote host
 
 Use your credentials to connect like so:
 
@@ -33,7 +44,7 @@ mysql --host=mysqlmaster1.tagname.hypernode.io --user=app --password=mypassword
 ```
 
 
-## Using HeidiSQL to connect to MySQL
+### Using HeidiSQL to connect to MySQL
 
 First, go to the [HeidiSQL](http://www.heidisql.com/download.php) homepage and use the installer to install
 HeidiSQL. Then configure HeidiSQL as follows:

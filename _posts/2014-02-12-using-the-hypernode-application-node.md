@@ -17,12 +17,8 @@ categories: manual usage
 
 ### SSH
 
-* Use the SSH key manager at the [Byte Service Panel](https://service.byte.nl/sshkeymanager/) to manage your keys.
+* Use the [SSH key manager](https://service.byte.nl/sshkeymanager/) at the Byte Service Panel to manage your keys.
 * There is no password authentication.
-
-### MySQL
-
-MySQL is open at port `3306`. Use your credentials to connect.
 
 
 ## Access to logs
@@ -40,15 +36,7 @@ MySQL error log | `/var/log/mysql/error.log`
 
 ## Using MySQL
 
-* MySQL is on `localhost`.
-* Your credentials are in `/data/web/.my.cnf`.
-
-There is no predefined database, so you should create your own.
-
-You are a local superuser. This means you can (among other things):
-* can create your own databases;
-* create users;
-* define views and triggers.
+See [Using MySQL on Hypernode]({% post_url 2014-02-12-using-mysql-on-hypernode %}) on how to use MySQL.
 
 
 ## Using Redis
