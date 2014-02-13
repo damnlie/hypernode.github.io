@@ -57,9 +57,11 @@ Specifically for the preview, we've changed some temporary things. Those will ob
 
 _Important_: When browsing your preview shop, doublecheck that you don't end up on your production shop by following a hardcoded link. 
 
-- [ ] Check all storefronts (stick `.test.hypernode.io` to the url)
-- [ ] Check frontpage, categories, product pages
-- [ ] Check search
-- [ ] Check restricted areas (downloads, etc).
-- [ ] Check ordering a product
-- [ ] Check common tasks in the admin backend
+- [ ] Test all storefronts (stick `.test.hypernode.io` to the url)
+- [ ] Test frontpage, categories, product pages
+- [ ] Test search
+- [ ] Test restricted areas (downloads, etc).
+- [ ] Test ordering a product
+- [ ] Test common tasks in the admin backend (ie, add product)
+- [ ] Test import/export procedures
+- [ ] Test custom administrative procedures
