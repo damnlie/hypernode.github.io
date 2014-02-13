@@ -35,7 +35,8 @@ Hypernodes run on a complete different software stack. This means that some mino
     1. URL redirects
     1. URL rewrites
     1. Magento RUN CODES and TYPES.
-1. All file uploads should be done by using SCP, RSYNC or SFTP. Regular FTP is disabled for security reasons.
+1. All file uploads should be done by using SCP, RSYNC or SFTP. Regular FTP is disabled for security reasons. You should use host `<tag>.hypernode.io` and user `app` for SSH and SCP operations. 
+1. Password access is disabled. The nodes use your SSH public keys that you can manage on our service panel TODO link naar service panel.
 1. Redis doesn't require a password anymore.
 1. Installed PHP is version 5.4. Magento 1.6+ officially support it, but some versions require a patch. See here. TODO insert magento patch announcement.
 1. We backup in case of hardware failures, but there are (as of yet) not historical backups. If you need them, we advice you to use the supplied program with offsite storage (such as S3). TODO insert historical backup recommendation.
