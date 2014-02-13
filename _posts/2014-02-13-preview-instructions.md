@@ -24,7 +24,7 @@ shop (files + database) and enables a very realistic comparision.
 1. We will issue a re-sync of your files and data and change the DNS for your domain(s) to the new node.
     * In case of external DNS control, we will propose a specific timeslot, as the migration of data and DNS has to happen at the same time.
 
-### Checklist
+### Changes
 
 Hypernodes run on a complete different software stack. This means that some minor functionality might differ from the current platform. Notable differences:
 
@@ -53,6 +53,13 @@ Specifically for the preview, we've changed some temporary things. Those will ob
 * Base URLs for your store fronts are updated in the database (so you'll be able to test using the *.hypernode.io domain). 
 * A very restrictive `robots.txt` is installed so your preview shop won't get indexed by Google and others. 
 
-### Caveats
+### Checklist
 
-* When browsing your preview shop, doublecheck that you don't end up on your production shop by following a hardcoded link. 
+_Important_: When browsing your preview shop, doublecheck that you don't end up on your production shop by following a hardcoded link. 
+
+- [ ] Check all storefronts (stick `.test.hypernode.io` to the url)
+- [ ] Check frontpage, categories, product pages
+- [ ] Check search
+- [ ] Check restricted areas (downloads, etc).
+- [ ] Check ordering a product
+- [ ] Check common tasks in the admin backend
