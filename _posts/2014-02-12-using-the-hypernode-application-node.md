@@ -18,7 +18,7 @@ excerpt: "A short manual covering how to use SSH, how to upload files, how to us
 
 ### SSH
 
-* Use the [SSH key manager](https://service.byte.nl/sshkeymanager/) at the Byte Service Panel to manage your keys.
+* Use the [SSH keys manager](https://service.byte.nl/sshkeymanager/) at the Byte Service Panel to manage your SSH-keys. This is installed once when we put your preview shop on Hypernode. If you make changes, mail us to reinstall your SSH-keys.
 * There is no password authentication.
 
 
