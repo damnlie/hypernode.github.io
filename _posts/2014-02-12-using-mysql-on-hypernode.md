@@ -65,3 +65,33 @@ Things should look like the screenshot below:
 
 ![HeidiSQL configured for Hypernode]({{ site.url }}/assets/hypernode-heidisql.png)
 
+
+## Creating a MySQL backup
+
+### Using Magerun
+
+Use the following command using SSH:
+
+```bash
+ magerun db:dump -n -c gz -s @stripped
+```
+
+This will create a compressed SQL file suitable for importing using either Magerun or `mysqlclient`. The dump will exclude any logfiles or temporary import tables.
+
+
+### Using mysqldump
+
+You should consider using Magerun (see above), but if you need to, you can create a mysqldump on the shell. See our documentation at [byte.nl](http://www.byte.nl/wiki/Database_exporteren_en_importeren) (dutch).
+
+
+### Using HeidiSQL
+
+You should consider using Magerun (see above), but you could use HeidiSQL to create a database dump.
+
+1. Start HeidiSQL.
+2. Connect to your node.
+3. Use Tools -> Export database as SQL.
+4. In the left pane, choose the Magento database.
+5. Choose a filename to export to.
+6. Choose appropriate options, notably `data`.
+7. Press Export.
