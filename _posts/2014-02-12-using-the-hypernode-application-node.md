@@ -68,7 +68,28 @@ Remove all files in `/data/web/public/var/cache/`.
 
 ### Magento Redis backend
 
-See `Redis`.
+Use the following snippet in your `local.xml` (replace XXXXX by your tagname):
+
+```xml
+        <cache>
+            <backend>Cm_Cache_Backend_Redis</backend>
+            <backend_options>
+                <server>redismaster1.XXXXX.hypernode.io</server>
+                <port>6379</port>
+                <persistent></persistent>
+                <database>0</database>
+                <password></password>
+                <force_standalone>0</force_standalone>
+                <connect_retries>1</connect_retries>
+                <read_timeout>10</read_timeout>
+                <automatic_cleaning_factor>0</automatic_cleaning_factor>
+                <compress_data>1</compress_data>
+                <compress_tags>1</compress_tags>
+                <compress_threshold>20480</compress_threshold>
+                <compression_lib>gzip</compression_lib>
+            </backend_options>
+        </cache>
+```
 
 ### PHP APC cache
 
