@@ -18,11 +18,12 @@ shop (files + database) and enables you to make a very realistic comparison.
 
 ### Procedure
 
-1. You are invited to browse your customer's shop on the given preview address. Use the checklist below to verify its functioning. 
-    * If you find anything missing, please discuss it with us @ `hypernode@byte.nl` 
+1. You are invited to browse your customer's shop on the given preview address. Use the checklist below to verify its functioning.
 1. When you are happy with the results, send us an OK.
 1. We will issue a re-sync of your files and data and change the DNS for your domain(s) to the new node.
     * In case of external DNS control, we will propose a specific timeslot, as the migration of data and DNS has to happen at the same time.
+
+If you find anything missing, please discuss it with us @ `hypernode@byte.nl`.
 
 ### Changes
 
@@ -38,7 +39,7 @@ Hypernodes run on a complete different software stack. This means that some mino
     1. URL rewrites
     1. Magento RUN CODES and TYPES.
 1. All file uploads should be done by using SCP, RSYNC or SFTP. Regular FTP is disabled for security reasons. You should use host `<tag>.hypernode.io` and user `app` for SSH and SCP operations. 
-1. Password access is disabled. The nodes use your SSH public keys that you can manage on our [service panel](https://service.byte.nl/sshkeymanager/).
+1. Password access is disabled. The nodes use your SSH public keys that you can manage on the Byte [service panel](https://service.byte.nl/sshkeymanager/).
 1. Redis doesn't require a password.
 1. Installed PHP is version 5.4. Magento 1.6+ officially support it, but some versions require a patch. See the [Magento announcement](http://www.magentocommerce.com/blog/magento-now-supports-php-54/) for the patch.
 1. We backup in case of hardware failures, but there are (as of yet) not historical backups. If you need them, we advice you to use the supplied program with offsite storage (such as S3). **TODO** insert historical backup recommendation.
@@ -69,3 +70,8 @@ _Important_: When browsing your preview shop, doublecheck that you don't end up 
 - ☐  Test common tasks in the admin backend (ie, add product)
 - ☐  Test import/export procedures
 - ☐  Test custom administrative procedures
+
+_Important_: Before go live 
+
+- ☐  Do you have a historical backup of the database?
+- ☐  Do you have (need) a historical backup of your files or can you redeploy from Git?
