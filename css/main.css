@@ -45,6 +45,11 @@ a:visited { color: #a0a; }
     line-height: 1.75em;
 }
 
+.posts li div p {
+    padding-left: 10px;
+    margin-top: 5px;
+}
+
 .posts span {
     color: #aaa;
     font-family: Monaco, "Courier New", monospace;

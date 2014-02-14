@@ -4,3 +4,4 @@ redcarpet:
   extensions: ["tables"]
 pygments: true
 excerpt_separator: ""
+permalink: /:title.html
