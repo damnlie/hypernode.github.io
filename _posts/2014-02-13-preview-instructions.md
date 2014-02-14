@@ -70,8 +70,7 @@ _Important_: When browsing your preview shop, doublecheck that you don't end up 
 - ☐  Test common tasks in the admin backend (ie, add product)
 - ☐  Test import/export procedures
 - ☐  Test custom administrative procedures
-
-_Important_: Before go live 
-
+- ☐  Test if your app is able to send mails
 - ☐  Do you have a historical backup of the database?
 - ☐  Do you have (need) a historical backup of your files or can you redeploy from Git?
+
