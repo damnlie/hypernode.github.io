@@ -107,14 +107,14 @@ called `http.mage-run-maps` containing:
 map $http_host $storecode {
   hostnames;
   default default;
-  *.storefront1.com store1storecode.com
-  www.storefront2.com store2storecode.com
+  *.storefront1.com store1storecode.com;
+  www.storefront2.com store2storecode.com;
 }
 
 map $http_host $storetype {
   hostnames;
   default store;
-  something.example.com othertype
+  something.example.com othertype;
 }
 ```
 
