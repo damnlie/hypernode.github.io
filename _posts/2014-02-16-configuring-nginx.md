@@ -6,8 +6,6 @@ categories: manual usage nginx
 excerpt: "Basic instructions on how to configure nginx on hypernode,
 coming from .htaccess-files on Apache."
 ---
-# Configuring nginx
-
 Nginx does not use .htaccess files like Apache does. This means that
 configuration previously done in .htaccess-files now has to be done in a
 different format, explained in the [nginx
