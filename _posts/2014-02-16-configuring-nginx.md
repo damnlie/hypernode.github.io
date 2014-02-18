@@ -119,7 +119,7 @@ map $http_host $storetype {
 ```
 
 In the `server`-context, the variables `$storecode` and `$storetype` can
-now be used to set the environment variables. In `server-mage-run-env`:
+now be used to set the environment variables. In `server.mage-run-env`:
 
 ```nginx
 location ~ \.php$ {
