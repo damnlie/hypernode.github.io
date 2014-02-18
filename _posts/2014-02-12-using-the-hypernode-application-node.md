@@ -47,25 +47,6 @@ See [Using MySQL on Hypernode]({% post_url 2014-02-12-using-mysql-on-hypernode %
 * There is no need for a password.
 * We've predefined databases `db0` and `db1` so you can flush sessions and key seperately.
 
-### Flusing the cache
-
-Use the command line (SSH) to flush the Redis cache:
-
-```bash
-# flush all keys in all databases
-redis-cli flushall
-
-# flush all keys in database 0 or database 1 respectively
-redis-cli -n 0 flushdb 
-redis-cli -n 1 flushdb 
-```
-
-## Flushing caches
-
-### Magento files cache backend
-
-Remove all files in `/data/web/public/var/cache/`.
-
 ### Magento Redis backend
 
 Use the following snippet in your `local.xml` (replace XXXXX by your tagname):
@@ -91,6 +72,26 @@ Use the following snippet in your `local.xml` (replace XXXXX by your tagname):
         </cache>
 ```
 
-### PHP APC cache
 
-You cannot flush the APC backend.
+## Flushing caches
+
+### Magento files cache backend
+
+Use the button in the Magento admin backend, or enforce by removing all files in `/data/web/public/var/cache/`.
+
+### Redis
+
+Use the command line (SSH) to flush the Redis cache:
+
+```bash
+# flush all keys in all databases
+redis-cli flushall
+
+# flush all keys in database 0 or database 1 respectively
+redis-cli -n 0 flushdb 
+redis-cli -n 1 flushdb 
+```
+
+### PHP Opcode Cache (OpCache)
+
+You cannot flush the opcache, but it will automatically detect changes on the filesystem, and reload when necessary.
