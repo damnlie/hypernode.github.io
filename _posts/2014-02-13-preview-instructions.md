@@ -45,6 +45,7 @@ Hypernodes run on a complete different software stack. This means that some mino
 1. We backup in case of hardware failures, but there are (as of yet) not historical backups. If you need them, we advice you to use the supplied program with offsite storage (such as S3). **TODO** insert historical backup recommendation.
 1. New Relic is temporarily disabled (it's on our todo list).
 1. The absolute path to the document root has changed to /data/web/public. Non-public files (such as credentials) should go into /data/web.
+1. The outgoing IP of your shop changes. This might affect external systems (such as inventory or supplier systems) if you have previously given them an IP.
 
 #### Things we've converted for you
 
@@ -72,6 +73,7 @@ _Important_: When browsing your preview shop, doublecheck that you don't end up 
 - ☐  Test import/export procedures
 - ☐  Test custom administrative procedures
 - ☐  Test if your app is able to send mails
+- ☐  Verify that connections with external systems (inventory, analytics, etc) still work.
 - ☐  Do you have a historical backup of the database?
 - ☐  Do you have (need) a historical backup of your files or can you redeploy from Git?
 
