@@ -73,6 +73,7 @@ _Important_: When browsing your preview shop, doublecheck that you don't end up 
 - ☐  Test import/export procedures
 - ☐  Test custom administrative procedures
 - ☐  Test if your app is able to send mails
+- ☐  Test that crons work
 - ☐  Verify that connections with external systems (inventory, analytics, etc) still work.
 - ☐  Do you have a historical backup of the database?
 - ☐  Do you have (need) a historical backup of your files or can you redeploy from Git?
