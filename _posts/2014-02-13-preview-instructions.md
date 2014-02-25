@@ -47,6 +47,15 @@ Hypernodes run on a complete different software stack. This means that some mino
 1. The absolute path to the document root has changed to /data/web/public. Non-public files (such as credentials) should go into /data/web.
 1. The outgoing IP of your shop changes. This might affect external systems (such as inventory or supplier systems) if you have previously given them an IP.
 
+| Changes | Byte | Hypernode |
+| :--- | :--- | :--- |
+| __Backups__ | Historical | Recovery |
+| __PHP Version__ | 5.3, php-cgi | 5.4, php-fpm |
+| __Webserver__ | Apache | Nginx |
+| __Speed__ | *** | ***** |
+| __Absolute path__ | /home/users/xxxx | /data/web |
+| __Upload__ | FTP, SCP | SCP, FTPS |
+
 #### Things we've converted for you
 
 While setting up your preview environment, we've automatically converted the following things. Take these into account if you run a git clone of your codebase on our servers (and preferably merge those changes into your own repo). 
