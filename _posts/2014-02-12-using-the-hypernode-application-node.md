@@ -74,6 +74,15 @@ Use the following snippet in your `local.xml` (replace XXXXX by your tagname):
 
 ## Flushing caches
 
+In general, you can flush caches with the `n98-magerun` tool (using SSH):
+
+```bash
+$ n98-magerun cache:flush
+Cache cleared
+```
+
+But if you need finer grained control and/or force a flush, see the next sections.
+
 ### Magento files cache backend
 
 Use the button in the Magento admin backend, or enforce by removing all files in `/data/web/public/var/cache/`.

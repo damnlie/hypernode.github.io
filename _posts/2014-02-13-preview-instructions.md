@@ -81,7 +81,7 @@ _Important_: When browsing your preview shop, doublecheck that you don't end up 
 
 ### Changes summary
 
-| Changes | Byte | Hypernode |
+|  | Byte | Hypernode |
 | :--- | :--- | :--- |
 | __Backups__ | Historical | Recovery |
 | __PHP Version__ | 5.3, php-cgi | 5.4, php-fpm |
