@@ -29,8 +29,7 @@ There are several logs for you to access:
 Logtype | Location
 --- | ---
 Web logs | `/var/log/nginx/access.log`
-Web error logs | `/var/log/nginx/error.log`
-PHP logs | Not yet provided
+Web and PHP error logs | `/var/log/nginx/error.log`
 MySQL slow log | `/var/log/mysql/mysql-slow.log`
 MySQL error log | `/var/log/mysql/error.log`
 
