@@ -24,6 +24,8 @@ password = JlogA1Sws6XMHmAj7QlP9vpfjLprtpE5
     * can create your own databases;
     * create users;
     * define views and triggers.
+* MySQL is not reachable from the internet. That means that you'll need to [setup
+a (temporary) SSH-tunnel](#sshtunnel) if you need to access MySQL from another host.
 
 
 ## How to connect to MySQL
@@ -39,11 +41,48 @@ mysql
 
 ### Using the command line shell from a remote host
 
-Use your credentials to connect like so:
+1. [Setup an SSH tunnel](#sshtunnel)
+1. Use your credentials to connect like so:
 
 ```bash
 mysql --host=mysqlmaster.<tagname>.hypernode.io --user=app --password=mypassword
 ```
+
+### <a name="sshtunnel"></a>Setting up an SSH tunnel to connect from another host
+
+#### MacOS, Linux
+
+MacOS X and Linux have a pre-installed SSH-client. Just fire up a terminal and type:
+
+```bash
+ssh -L 3306:localhost:3306 app@<tagname>.hypernode.io
+```
+
+This will tunnel MySQL port 3306 from your node, to port 3306 on your own machine.
+Now, you should be able to connect to MySQL on your own machine on 127.0.0.1, port 3306.
+Open up a new terminal and run:
+
+```bash
+mysql --host=127.0.0.1 --user=app --password=mypassword
+```
+
+If you have a MySQL server running on your own machine for development, you might get
+an error like `bind: Address already in use`. Just choose another port to tunnel to:
+
+```bash
+ssh -L 33306:localhost:3306 app@<tagname>.hypernode.io
+```
+
+And in a new terminal:
+
+```bash
+mysql --host=127.0.0.1 --port 33306 --user=app --password=mypassword
+```
+
+**Note**: `localhost` means something else to the mysql-client than `127.0.0.1`.
+`localhost` means a connection through a local socket (most of the time in
+`/var/lib/mysql`). Since the your MySQL is not actually running on localhost, you need
+to connect to `127.0.0.1`.
 
 
 ### Using HeidiSQL to connect to MySQL
@@ -51,11 +90,12 @@ mysql --host=mysqlmaster.<tagname>.hypernode.io --user=app --password=mypassword
 First, go to the [HeidiSQL](http://www.heidisql.com/download.php) homepage and use the installer to install
 HeidiSQL. Then configure HeidiSQL as follows:
 
+1. [Setup an SSH tunnel](#sshtunnel)
 1. Start HeidiSQL
 1. Click `new` in the bottom-left corner
 1. Choose a suitable name for your connection
 1. Edit the following fields:
-    1. `Hostname / IP`: enter the MySQL hostname (see credentials)
+    1. `Hostname / IP`: 127.0.0.1
     1. `User`: enter the MySQL user (see credentials)
     1. `Password`: enter the MySQL password for the user (see credentials)
 1. Leave all other fields as they are.
@@ -68,7 +108,7 @@ Things should look like the screenshot below:
 
 ## Creating a MySQL backup
 
-### Using Magerun
+### <a name="magerun"></a>Using Magerun
 
 Use the following command using SSH:
 
@@ -81,17 +121,18 @@ This will create a compressed SQL file suitable for importing using either Mager
 
 ### Using mysqldump
 
-You should consider using Magerun (see above), but if you need to, you can create a mysqldump on the shell. See our documentation at [byte.nl](http://www.byte.nl/wiki/Database_exporteren_en_importeren) (dutch).
+You should consider using [Magerun](#magerun), but if you need to, you can create a mysqldump on the shell. See our documentation at [byte.nl](http://www.byte.nl/wiki/Database_exporteren_en_importeren) (dutch).
 
 
 ### Using HeidiSQL
 
-You should consider using Magerun (see above), but you could use HeidiSQL to create a database dump.
+You should consider using [Magerun](#magerun), but you could use HeidiSQL to create a database dump.
 
+1. [Setup an SSH tunnel](#sshtunnel)
 1. Start HeidiSQL.
-2. Connect to your node.
-3. Use Tools -> Export database as SQL.
-4. In the left pane, choose the Magento database.
-5. Choose a filename to export to.
-6. Choose appropriate options, notably `data`.
-7. Press Export.
+1. Connect to your node.
+1. Use Tools -> Export database as SQL.
+1. In the left pane, choose the Magento database.
+1. Choose a filename to export to.
+1. Choose appropriate options, notably `data`.
+1. Press Export.
