@@ -55,13 +55,13 @@ domains. Unfortunately they are not wide-spread yet, so the chances are your pro
 
 Another solution is to redirect traffic for the apex domain
 _yourdomain.com_ to its www-counterpart _www.yourdomain.com_. You might be
-able to configure redirecting with your DNS provider, or you can use the
-free service from [wwwizer](http://wwwizer.com/naked-domain-redirect).
-Just configure the following A record for your apex domain and it will
-redirect all traffic for you.
+able to configure redirecting with your DNS provider, or you can use our
+free wwwizer service. Just configure the following A-records for your apex
+domain and they will redirect all traffic for you.
 
 ```
-yourdomain.com          A           174.129.25.170
+yourdomain.com          A           46.21.232.141
+yourdomain.com          A           46.21.233.172
 ```
 
 Note that the redirect server doesn't have your SSL certificate
