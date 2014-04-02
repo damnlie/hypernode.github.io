@@ -30,6 +30,7 @@ gem install github-pages
 ### Running the server
 
 ```bash
+source ~/.rvm/scripts/rvm
 rvm use 2.1.0@hypernode
 jekyll serve --watch
 ```
