@@ -46,7 +46,7 @@ Hypernodes run on a complete different software stack. This means that some mino
 1. New Relic is temporarily disabled (it's on our todo list).
 1. The absolute path to the document root has changed to /data/web/public. Non-public files (such as credentials) should go into /data/web.
 1. The outgoing IP of your shop changes. This might affect external systems (such as inventory or supplier systems) if you have previously given them an IP.
-1. The system time is set to [UTC](http://en.wikipedia.org/wiki/Coordinated_Universal_Time) (previously it was set to Dutch time with daylight saving enabled). This resolves issues with foreign customers, and also synchronising with foreign servers. If you need a specific timezone, please set it explicitly ([PHP example](http://nl1.php.net/manual/en/function.date-default-timezone-set.php)). 
+1. The system time is set to [UTC](http://en.wikipedia.org/wiki/Coordinated_Universal_Time) (previously it was set to Dutch time with daylight saving enabled). This resolves issues with foreign customers, and also synchronising with foreign servers. If you need a specific timezone, please set it explicitly ([PHP example](http://nl1.php.net/manual/en/function.date-default-timezone-set.php)). Note: this also applies to cronjob timings. If you need to adjust your crons for DST, you should write a wrapper. It is on our todo list to fix this.
 
 #### Things we've converted for you
 
