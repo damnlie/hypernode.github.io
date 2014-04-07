@@ -15,7 +15,7 @@ At the time of writing (April 2014), Hypernode fully covers recovery backups, wh
 
 Most important volatile data is the database. 
 
-## Creating 
+### Creating 
 
 Put the following command in your cron. It will not lock your database, so it can be safely run at busy times, howevert his example runs nightly.
 
@@ -30,7 +30,7 @@ Notes:
 * Chronic will only mail the output, if there is a failure.
 * Flock ensures that only a single instance runs. If, for some reason, a backup run takes a long time, it will never run twice at the same time.
 
-## Restoring
+### Restoring
 
 ```bash
 n98-magerun db:import --root-dir=~/public <backup_filename>
@@ -42,7 +42,7 @@ If you want to copy your data to an offsite location, we recommend the external 
 
 Tarsnap charges $0.25 per GB per month, but only for new data (incremental updates). 
 
-## How to get up and running in 10 minutes
+### How to get up and running in 10 minutes
 
 First, register for an account at [tarsnap](http://www.tarsnap.com/) and upload some prepaid funds. For an average Magento shop, &euro;100 will pay for a year of backup service. 
 
@@ -101,7 +101,7 @@ MAILTO=yourmailadress@here
 This will create an archive for every day of the week. It will overwrite old archives. 
 You will only pay for the unique, compressed amount of data. For an average shop, this is 1/3 of the size. 
 
-# Restoring
+### Restoring
 
 List the archives:
 
