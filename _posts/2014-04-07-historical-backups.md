@@ -48,6 +48,7 @@ First, register for an account at [tarsnap](http://www.tarsnap.com/) and upload 
 Second, you will need a private key to encrypt your data. On your Hypernode, run ```tarsnap-keygen --keyfile ~/tarsnap.key --user <email> --machine <mysite>```. You should copy this ```tarsnap.key``` file to a safe location, as your backup is inaccessible without it! A local USB stick is a good idea.
 
 Third, create a tarsnap configuration file:
+
 ```bash
 mkdir -p ~/.tarsnapcache
 cat > ~/.tarsnaprc <<EOM
@@ -70,6 +71,7 @@ EOM
 ```
 
 Four, test this setup. The initial upload could take up to several hours.
+
 ```bash
 # Create a backup archive called "backup-WEEKDAY"
 tarsnap -c -f backup-`date "+%A"` -v  ~
@@ -88,16 +90,19 @@ You will only pay for the unique, compressed amount of data. For an average shop
 # Restoring
 
 List the archives:
+
 ```bash 
 tarsnap --list-archives --verbose
 ```
 
 List the contents of a specific archive:
+
 ```bash
 tarsnap -t -f <archive>
 ```
 
 Extract a file:
+
 ```bash
 tarsnap -x -f <archive> <file or files>
 tarsnap -x -f backup-Monday data/web/site.com/Nieuwsbrief.png
