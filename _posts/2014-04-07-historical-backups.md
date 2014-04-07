@@ -4,6 +4,7 @@ title:  "Historical backups"
 ---
 
 In general there are two types of backups: 
+
 * __Recovery__, so that in case of a serious system failure (fire, earthquake, EMP), the system can be restored to the most recent backup
 * __Historical__, over time multiple snapshots are taken. When things go _slightly_ wrong (ie. a product is accidentally deleted), one can go back in time to restore the appropriate snapshot (or part thereof).
 
@@ -102,5 +103,5 @@ tarsnap -x -f <archive> <file or files>
 tarsnap -x -f backup-Monday data/web/site.com/Nieuwsbrief.png
 ```
 
-Note: restoring will use the same directory structure. The command above will recreate "data/web/site.com" from the current working dir. So do a ```cd /``` to overwrite the old data.
+Note: restoring will use the same directory structure. The command above will recreate "data/web/site.com" from the current working dir. So do a ```cd /``` first, to overwrite the old files in the right location.
 
