@@ -78,15 +78,28 @@ Four, test this setup. The initial upload could take up to several hours.
 tarsnap -c -f backup-`date "+%A"` -v  ~
 ```
 
-Five, implement this as a daily cron. To make optimal use of the tarsnap efficiency algorithm, you should NOT use compression on your local database dump and you should dump always to the same file. So including the database dump command above, your cron would become:
+Five, implement this as a daily cron. To make optimal use of the tarsnap efficiency algorithm, you should NOT use compression on your local database dump and you should dump always to the same file. Lets put this in a tiny script first:
+
+```bash
+cat > ~/backup/makebackup.sh <<EOM
+TODAY=`date "+%A"`; 
+flock -n ~/.mysqldump chronic n98-magerun db:dump --root-dir=~/public --no-interaction --strip @stripped ~/backup/mysql-latest.sql; 
+flock -n ~/.tarsnap.lock tarsnap -d backup-\$TODAY 2>/dev/null; 
+flock -n ~/.tarsnap.lock chronic tarsnap -c -f backup-\$TODAY ~ 
+EOM
+chmod 755 ~/backup/*.sh
+
+```
+
+So including the database dump command above, your ```crontab -e``` would become:
 
 ```bash
 MAILTO=yourmailadress@here
-0 2 * * * mkdir -p ~/backup; flock -n ~/.mysqldump chronic n98-magerun db:dump --root-dir=~/public --no-interaction --strip @stripped ~/backup/mysql-latest.sql; TODAY=`date "+%A"`; flock -n ~/.tarsnap.lock tarsnap -d backup-$TODAY 2>/dev/null; flock -n ~/.tarsnap.lock tarsnap -c -f backup-$TODAY ~ 
+0 2 * * * flock -n ~/.makebackup.lock ~/backup/makebackup.sh 
 ```
 
 This will create an archive for every day of the week. It will overwrite old archives. 
-You will only pay for the unique, compressed amount of data. For an average shop, this is 1/3 of the shop-size. 
+You will only pay for the unique, compressed amount of data. For an average shop, this is 1/3 of the size. 
 
 # Restoring
 
