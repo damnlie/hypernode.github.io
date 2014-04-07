@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Historical backups"
+excerpt: "At the time of writing (April 2014), Hypernode fully covers recovery backups, which are taken daily. There are no historical backups in place yet. It is on our roadmap though. Meanwhile, we provide instructions on this page you to set up periodic backup, possibly copied to an offsite location."
 ---
 
 In general there are two types of backups: 
