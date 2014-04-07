@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Historical backups"
-excerpt: "At the time of writing (April 2014), Hypernode fully covers recovery backups, which are taken daily. There are no historical backups in place yet. It is on our roadmap though. Meanwhile, we provide instructions on this page you to set up periodic backup, possibly copied to an offsite location."
+excerpt: "At the time of writing (April 2014), Hypernode fully covers recovery backups, which are taken daily. There are no historical backups in place yet. Meanwhile, we provide instructions on this page on how to set up periodic backup, possibly copied to an offsite location."
 ---
 
 In general there are two types of backups: 
@@ -9,7 +9,7 @@ In general there are two types of backups:
 * __Recovery__, so that in case of a serious system failure (fire, earthquake, EMP), the system can be restored to the most recent backup
 * __Historical__, over time multiple snapshots are taken. When things go _slightly_ wrong (ie. a product is accidentally deleted), one can go back in time to restore the appropriate snapshot (or part thereof).
 
-At the time of writing (April 2014), Hypernode fully covers recovery backups, which are taken daily. There are no historical backups in place yet. It is on [our roadmap](http://hypernode.uservoice.com/forums/242854-hypernode/filters/top) though. Meanwhile, we provide instructions on this page you to set up periodic backup, possibly copied to an offsite location. 
+At the time of writing (April 2014), Hypernode fully covers recovery backups, which are taken daily. There are no historical backups in place yet. It is on [our roadmap](http://hypernode.uservoice.com/forums/242854-hypernode/filters/top) though. Meanwhile, we provide instructions on this page on how to set up periodic backup, possibly copied to an offsite location. 
 
 # Database 
 
