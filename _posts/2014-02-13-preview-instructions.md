@@ -31,7 +31,7 @@ If you find anything missing, please discuss it with us @ `hypernode@byte.nl`.
 
 Hypernodes run on a complete different software stack. This means that some minor functionality might differ from the current platform. Notable differences:
 
-1. Database and redis server names have changed to `mysqlmaster1.<tag>.hypernode.io` and `redismaster1.<tag>.hypernode.io`.
+1. Database and redis server names have changed to `mysqlmaster.<tag>.hypernode.io` and `redismaster.<tag>.hypernode.io`.
 1. Our new webserver Nginx does not support `.htaccess` files (so it is faster). We handle most Magento .htaccess functionality out of the box, but if you have added custom functionality to one or more htaccess files, you should check that [it works under Nginx](configuring-nginx.html). 
     1. Client IP blocks
     1. Folders with password protection

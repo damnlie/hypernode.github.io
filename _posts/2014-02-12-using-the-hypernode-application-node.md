@@ -41,7 +41,7 @@ See [Using MySQL on Hypernode]({% post_url 2014-02-12-using-mysql-on-hypernode %
 
 ## Using Redis
 
-* Redis runs on `redismaster1.<tag>.hypernode.io`.
+* Redis runs on `redismaster.<tag>.hypernode.io`.
 * It runs on port `6379`.
 * There is no need for a password.
 * We've predefined databases `db0` and `db1` so you can flush sessions and key seperately.
@@ -54,7 +54,7 @@ Use the following snippet in your `local.xml` (replace XXXXX by your tagname):
         <cache>
             <backend>Cm_Cache_Backend_Redis</backend>
             <backend_options>
-                <server>redismaster1.XXXXX.hypernode.io</server>
+                <server>redismaster.XXXXX.hypernode.io</server>
                 <port>6379</port>
                 <persistent></persistent>
                 <database>0</database>
