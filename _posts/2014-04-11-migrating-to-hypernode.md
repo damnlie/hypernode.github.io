@@ -42,16 +42,14 @@ Steps:
 4. Synchronize all files to the hypernode using rsync
 
     ```sh
-    rsync -a --exclude=/var/\*/\* --delete $CURRENT_SSH:$DOMAIN/ /data/web/$DOMAIN
+    rsync -a --exclude=/var/\*/\* --delete $CURRENT_SSH:$DOMAIN/ /data/web/public
     ```
     
     For subsequent runs, you can prevent your xml files from being overwritten by adding `--exclude=\*.xml`
 
-5. Create a symlink from /data/web/public to the downloaded files and enter this directory, for all subsequent steps will assume you are in it.
+5. Enter /data/web/public, all subsequent steps will assume you are in it.
 
     ```sh
-    rmdir public || rm public
-    ln -s $DOMAIN public
     cd public
     ```
     
