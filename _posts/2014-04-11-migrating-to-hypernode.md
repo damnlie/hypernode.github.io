@@ -151,3 +151,14 @@ Steps:
 13. Convert the apache configuration you might have done in .htaccess-files to nginx configuration, see [this manual]({% post_url 2014-02-16-configuring-nginx %}) for some hints.
 
 14. Test your site by creating one or more DNS CNAME records to your hypernode and configuring base urls for them, or by temporarily adding entries to your local hosts file.
+
+
+15. Copy your cronjobs over.
+
+    ```sh
+    ssh $CURRENT_SSH "crontab -l" | crontab -
+    ```
+
+    **NB:** cronjobs often contain full paths to scripts inside your homedirectory. Be sure to replace them for your situation at Hypernode. For example, if your site is currently hosted at Byte, you need to replace ```/home/users/domaiftp``` with ```/data/web/```, and ```/home/users/domaiftp/domain.com``` with ```/data/web/public```.
+
+    **NB:** if you're still testing with Hypernode while your production site is running elsewhere, you might want to wait with the cronjobs until that migration is done. Cronjobs running in multiple places may result in unwanted behaviour.
