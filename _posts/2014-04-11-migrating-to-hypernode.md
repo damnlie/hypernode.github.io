@@ -82,7 +82,7 @@ Steps:
     echo "GRANT ALL PRIVILEGES ON $DBNAME.* TO '$DBUSER'@'%' IDENTIFIED BY '$DBPASS'" | mysql
     ```
    
-9. Copy the database over:
+9. Copy the database:
 
     ```sh
    ssh $CURRENT_SSH "n98-magerun --root-dir=$DOMAIN db:dump --strip='@stripped' --stdout" | n98-magerun db:console
@@ -153,7 +153,7 @@ Steps:
 14. Test your site by creating one or more DNS CNAME records to your hypernode and configuring base urls for them, or by temporarily adding entries to your local hosts file.
 
 
-15. Copy your cronjobs over.
+15. Copy your cronjobs.
 
     ```sh
     ssh $CURRENT_SSH "crontab -l" | crontab -
