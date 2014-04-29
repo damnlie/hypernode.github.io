@@ -41,7 +41,7 @@ See [Using MySQL on Hypernode]({% post_url 2014-02-12-using-mysql-on-hypernode %
 
 ## Configuring Cron
 
-You can easily setup cronjobs. Log in using SSH and run `crontab -e`. Follow the normal cron syntax. Ubuntu has nice [documentation](https://help.ubuntu.com/community/CronHowto) if you need to know any specifics.
+You can easily set up cronjobs. Log in using SSH and run `crontab -e`. Follow the normal cron syntax. Ubuntu has nice [documentation](https://help.ubuntu.com/community/CronHowto) if you need to know any specifics.
 
 Please note a couple of things:
 
