@@ -39,6 +39,16 @@ MySQL error log | `/var/log/mysql/error.log`
 See [Using MySQL on Hypernode]({% post_url 2014-02-12-using-mysql-on-hypernode %}) on how to use MySQL.
 
 
+## Configuring Cron
+
+You can easily setup cronjobs. Log in using SSH and run `crontab -e`. Follow the normal cron syntax. Ubuntu has nice [documentation](https://help.ubuntu.com/community/CronHowto) if you need to know any specifics.
+
+Please note a couple of things:
+
+1. Time is set to UTC, so depending on where you live, this might be confusing. If you set your cron schedule, please make sure you set it according to UTZ. ([handy converter](http://www.timeanddate.com/worldclock/)]
+1. You can make sure cron runs do not overlap using [lockf](http://linux.die.net/man/1/flock). We do not offer `lockrun` on Hypernode.
+
+
 ## Using Redis
 
 * Redis runs on `redismaster.<tag>.hypernode.io`.
