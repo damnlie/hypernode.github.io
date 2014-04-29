@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Migrating from Byte to Hypernode"
+title:  "Manually migrating from Byte to Hypernode"
 date:   2014-04-11 16:44:34
 categories: migration
 excerpt: "A manual on how to migrate your shop from the Byte platform to
