@@ -7,6 +7,13 @@ excerpt: "A manual on how to migrate your shop from the Byte platform to
 a Hypernode"
 ---
 
+## Please use the hypernode-importer
+
+Before you start migrating your site by hand, please condider using the `hypernode-importer`. This tool is installed on your Hypernode and takes care of most of the following tasks.
+
+
+## Manually migrating your site from Byte to Hypernode
+
 Prerequisites:
 
 * A Hypernode application, called _name_.hypernode.io in the Byte Servicepanel.
