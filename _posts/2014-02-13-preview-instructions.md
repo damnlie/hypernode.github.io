@@ -88,5 +88,6 @@ _Important_: When browsing your preview shop, doublecheck that you don't end up 
 | __PHP Version__ | 5.3, php-cgi | 5.4, php-fpm |
 | __Webserver__ | Apache | Nginx |
 | __Speed__ | *** | ***** |
-| __Absolute path__ | /home/users/xxxx | /data/web |
-| __Upload__ | FTP, SCP | SCP, FTPS |
+| __Absolute path__    | /home/users/domaiftp | /data/web |
+| __Document root__&nbsp;&nbsp;&nbsp;| /home/users/domaiftp/domain.nl/&nbsp;&nbsp;&nbsp;| /data/web/public |
+| __Upload__ | FTP, FTPS, SSH (SFTP, SCP, rsync) | SSH (SFTP, SCP, rsync) |
