@@ -61,6 +61,7 @@ Specifically for the preview, we've changed some temporary things. Those will ob
 * Base URLs for your store fronts are updated in the database (so you'll be able to test using the *.hypernode.io domain). 
 * A very restrictive `robots.txt` is installed so your preview shop won't get indexed by Google and others. 
 
+<a name="preview-checklist"></a>
 ### Checklist
 
 _Important_: When browsing your preview shop, doublecheck that you don't end up on your production shop by following a hardcoded link. 
