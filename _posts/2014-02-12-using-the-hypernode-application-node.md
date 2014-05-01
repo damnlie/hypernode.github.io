@@ -46,7 +46,7 @@ You can easily set up cronjobs. Log in using SSH and run `crontab -e`. Follow th
 Please note a couple of things:
 
 1. Time is set to UTC, so depending on where you live, this might be confusing. If you set your cron schedule, please make sure you set it according to UTZ. ([handy converter](http://www.timeanddate.com/worldclock/)]
-1. You can make sure cron runs do not overlap using [lockf](http://linux.die.net/man/1/flock). We do not offer `lockrun` on Hypernode.
+1. You can make sure cron runs do not overlap using [flock](http://linux.die.net/man/1/flock). We do not offer `lockrun` on Hypernode.
 
 
 ## Using Redis

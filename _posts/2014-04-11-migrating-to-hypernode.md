@@ -9,7 +9,7 @@ a Hypernode"
 
 ## Please use the hypernode-importer
 
-Before you start migrating your site by hand, please condider using the `hypernode-importer`. This tool is installed on your Hypernode and takes care of most of the following tasks.
+Before you start migrating your site by hand, please consider [using the `hypernode-importer`]({% post_url 2014-05-01-getting-started %}). This tool is installed on your Hypernode and takes care of most of the following tasks.
 
 
 ## Manually migrating your site from Byte to Hypernode
@@ -161,6 +161,8 @@ Steps:
 
 
 15. Copy your cronjobs.
+
+    [More information on cron on your Hypernode]({% post_url 2014-02-12-using-the-hypernode-application-node %}#configure-cron).
 
     ```sh
     ssh $CURRENT_SSH "crontab -l" | crontab -
