@@ -38,7 +38,7 @@ MySQL error log | `/var/log/mysql/error.log`
 
 See [Using MySQL on Hypernode]({% post_url 2014-02-12-using-mysql-on-hypernode %}) on how to use MySQL.
 
-
+<a name="configure-cron"></a>
 ## Configuring Cron
 
 You can easily set up cronjobs. Log in using SSH and run `crontab -e`. Follow the normal cron syntax. Ubuntu has nice [documentation](https://help.ubuntu.com/community/CronHowto) if you need to know any specifics.
