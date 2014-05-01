@@ -32,7 +32,7 @@ Congratulations, you should be the proud owner of a fresh Hypernode! Now you're 
     * `hypernode-importer --host HOST --user USER --path PATH`
     * `hypernode-importer --help` for a full list of options
 1. Run the importer with the credentials to you current hosting environment. If your site is hosted at Byte, the command would look like this:
-    * `hypernode-importer --host ssh.domain.com --user domain.com --path /home/users/domaiftp/domain.com/`
+    * `hypernode-importer --host ssh.domain.com --user domain.com --path domain.com`
 1. Sit back while we do the work :)
 
 If anything goes wrong (authentication, error during copy), you can just run the importer again after fixing the problem.
