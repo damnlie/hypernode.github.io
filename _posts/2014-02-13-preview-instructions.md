@@ -12,9 +12,7 @@ Your new Hypernode is ready to boost your customer's shop! Notable advantages:
 1. Speedier, thanks to a new PHP version, opcache cache, local storage, local database access, dedicated query cache, low latency local Redis.
 1. No BPU metering, no more PHP execution time limit.
 
-You should have received a preview address, such as 
-`<site>.test.hypernode.io`. This is a very recent snapshot of your 
-shop (files + database) and enables you to make a very realistic comparison.
+After [copying your site to Hypernode]({% post_url 2014-05-01-getting-started %}), your site should be available using `<name>.hypernode.io`. If you get redirected to the production site, you might need to make some changes to your store configuration.
 
 ### Procedure
 
