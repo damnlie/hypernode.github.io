@@ -62,5 +62,6 @@ __NB: nginx has a complex but [well documented](http://nginx.org/en/docs/http/ng
 
 ## Known issues
 
-
+* There is a pending issue which can result in not being able to calculate discounts or tax rates. This can temporarily be solved by installing [this Magento module](https://github.com/danslo/Rubic_FixTotalSorting). A long term solution is being discussed and developed.
+* Any Ioncube encoded module is currently, and likely will never be, supported.
 
