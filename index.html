@@ -5,15 +5,23 @@ title: Hypernode User Documentation
 
 <div id="home">
   <h1>Hypernode User Documentation</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-          <div>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-            <p>{{ post.excerpt }}</p>
-          </div>
+  <div class="row jumbotron">
+    <h2>Get started here</h2><br/>
+    First, read up on <a href="{% post_url 2014-05-01-getting-started %}">getting started</a><br/>
+    Then, read up on <a href="{% post_url 2014-05-01-going-live %}">going live</a><br/>
+  </div>
+  <div class="row" id="doclist">
+    <h2>All of our documentation</h2>
+    <ul class="posts">
+      {% for post in site.posts %}
+        <li>
+            <div>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+              <p>{{ post.excerpt }}</p>
+            </div>
 
-      </li>
-    {% endfor %}
-  </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

@@ -35,6 +35,11 @@ a         { color: #00a; }
 a:hover   { color: #000; }
 a:visited { color: #a0a; }
 
+#doclist {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
 /*****************************************************************************/
 /*
 /* Home
