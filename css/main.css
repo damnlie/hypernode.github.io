@@ -197,6 +197,10 @@ a:visited { color: #a0a; }
 /*
 /*****************************************************************************/
 
+.post {
+    max-width: 800px;
+}
+
 /* standard */
 .post pre {
     border: 1px solid #ddd;
