@@ -15,7 +15,8 @@ Congratulations, you should be the proud owner of a fresh Hypernode! Now you're 
     * On Linux or Mac OS you can check this using `ssh-add -L`
     * On Windows there should be an icon for ''putty-agent'' in the system tray, with your key
 * Enable SSH Agent Forwarding in your config.
-    * `echo "ForwardAgent yes" >> ~/.ssh/config`
+    * Linux/Mac: `echo "ForwardAgent yes" >> ~/.ssh/config`
+    * Windows: [follow these instructions](http://www.howtogeek.com/125364/how-to-ssh-hop-with-key-forwarding-from-windows/)
 * SSH access to your current hosting environment, using the private key in the agent
 * The documentroot of your site in the current hosting environment
     * This is the place where the files for your site are located, and is (most of the times) a subdirectory in your homedirectory
