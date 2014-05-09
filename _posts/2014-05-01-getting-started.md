@@ -14,6 +14,8 @@ Congratulations, you should be the proud owner of a fresh Hypernode! Now you're 
 * An SSH agent with the private key loaded
     * On Linux or Mac OS you can check this using `ssh-add -L`
     * On Windows there should be an icon for ''putty-agent'' in the system tray, with your key
+* Enable SSH Agent Forwarding in your config.
+    * `echo "ForwardAgent yes" >> ~/.ssh/config`
 * SSH access to your current hosting environment, using the private key in the agent
 * The documentroot of your site in the current hosting environment
     * This is the place where the files for your site are located, and is (most of the times) a subdirectory in your homedirectory
@@ -29,7 +31,7 @@ Congratulations, you should be the proud owner of a fresh Hypernode! Now you're 
     * `ssh app@name.hypernode.io`
     * If you're being asked to enter a password, either your private key is not loaded in your SSH Agent, you haven't given the public key access to the Hypernode, or the public key hasn't propagated to the Hypernode yet. The distribution of the key to the Hypernode may take a minute.
 1. Use `hypernode-importer` to automatically migrate your site to your Hypernode. It's usage is simple:
-    * `hypernode-importer --host HOST --user USER --path PATH`
+    * `hypernode-importer --host SSHHOST --user SSHUSER --path PATH`
     * `hypernode-importer --help` for a full list of options
 1. Run the importer with the credentials to you current hosting environment. If your site is hosted at Byte, the command would look like this:
     * `hypernode-importer --host ssh.domain.com --user domain.com --path domain.com`
