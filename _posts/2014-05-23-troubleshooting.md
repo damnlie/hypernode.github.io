@@ -14,6 +14,7 @@ Also, to prevent your mail ending up in spam folders, it might help to add this 
 
 ```
 domain.com TXT "v=spf1 include:spf.hypernode.com ?all"
+```
 
 ## Lesti FPC doesn't work
 
