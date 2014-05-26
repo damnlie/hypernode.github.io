@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Using HHVM"
+title:  "Using HHVM/HipHop"
 date:   2014-05-07 11:44:41
 categories: hhvm, php
 excerpt: "Using HHVM on your Hypernode, combined with php-fpm"
