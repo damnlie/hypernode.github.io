@@ -64,7 +64,7 @@ Specifically for the preview, we've changed some temporary things. Those will ob
 
 _Important_: When browsing your preview shop, doublecheck that you don't end up on your production shop by following a hardcoded link. 
 
-- ☐  Test all storefronts (stick `.test.hypernode.io` to the url)
+- ☐  Test all storefronts
 - ☐  Test frontpage, categories, product pages
 - ☐  Test search
 - ☐  Test restricted areas (downloads, etc).
