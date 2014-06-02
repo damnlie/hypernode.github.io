@@ -21,7 +21,8 @@ Put the following command in your cron. It will not lock your database, so it ca
 
 ```bash
 MAILTO=yourmailadress@here
-0 2 * * * mkdir -p ~/backup; flock -n ~/.mysqldump chronic /usr/local/bin/n98-magerun db:dump --root-dir=~/public --compression=gz --no-interaction --strip @stripped ~/backup
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+0 2 * * * mkdir -p ~/backup; flock -n ~/.mysqldump chronic n98-magerun db:dump --root-dir=~/public --compression=gz --no-interaction --strip @stripped ~/backup
 0 5 * * * chronic find /data/web/backup/ -type f -mtime +7 -delete
 ```
 
@@ -95,6 +96,7 @@ So including the database dump command above, your ```crontab -e``` would become
 
 ```bash
 MAILTO=yourmailadress@here
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 0 2 * * * flock -n ~/.makebackup.lock ~/backup/makebackup.sh 
 ```
 
