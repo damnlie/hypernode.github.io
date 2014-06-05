@@ -83,13 +83,13 @@ Five, implement this as a daily cron. To make optimal use of the tarsnap efficie
 
 ```bash
 cat > ~/backup/makebackup.sh <<EOM
-TODAY=`date "+%A"`; 
+#!/bin/sh
+TODAY=\$(date "+%A");
 flock -n ~/.mysqldump chronic n98-magerun db:dump --root-dir=~/public --no-interaction --strip @stripped ~/backup/mysql-latest.sql; 
 flock -n ~/.tarsnap.lock tarsnap -d backup-\$TODAY 2>/dev/null; 
 flock -n ~/.tarsnap.lock chronic tarsnap -c -f backup-\$TODAY ~ 
 EOM
 chmod 755 ~/backup/*.sh
-
 ```
 
 So including the database dump command above, your ```crontab -e``` would become:
