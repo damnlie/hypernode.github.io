@@ -17,9 +17,10 @@ Most important volatile data is the database.
 
 ### Creating 
 
-Put the following command in your cron. It will not lock your database, so it can be safely run at busy times, howevert his example runs nightly.
+Put the following command in your cron. It will not lock your database, so it can be safely run at busy times. This example runs nightly.
 
 ```bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=yourmailadress@here
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 0 2 * * * mkdir -p ~/backup; flock -n ~/.mysqldump chronic n98-magerun db:dump --root-dir=~/public --compression=gz --no-interaction --strip @stripped ~/backup
@@ -28,8 +29,8 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 Notes:
 * This requires some free space on your Hypernode. For a typical 1G database, the compressed dump file takes 20M (the index data is not copied). You can use ```df -h ~``` to verify the available amount of space.
-* Chronic will only mail the output, if there is a failure.
-* Flock ensures that only a single instance runs. If, for some reason, a backup run takes a long time, it will never run twice at the same time.
+* `chronic` will only mail the output, if there is a failure.
+* `flock` ensures that only a single instance runs. If, for some reason, a backup run takes a long time, it will never run twice at the same time.
 
 ### Restoring
 
@@ -37,9 +38,9 @@ Notes:
 n98-magerun db:import --root-dir=~/public <backup_filename>
 ```
 
-# Offsite backup
+# Off-site backup
 
-If you want to copy your data to an offsite location, we recommend the external "tarsnap" service. It encrypts your data and then stores it on Amazon S3 storage platform. S3 is extremely reliable, as the data is duplicated at at least three different data centers. Nobody but you has access to the data, as it is encrypted using the best open standards. Not even the NSA can get to it. 
+If you want to copy your data to an off-site location, we recommend the external "tarsnap" service. It encrypts your data and then stores it on Amazon S3 storage platform. S3 is extremely reliable, as the data is duplicated at at least three different data centers. Nobody but you has access to the data, as it is encrypted using the best open standards. Not even the NSA can get to it.
 
 Tarsnap charges $0.25 per GB per month, but only for new data (incremental updates). 
 
@@ -83,18 +84,19 @@ Five, implement this as a daily cron. To make optimal use of the tarsnap efficie
 
 ```bash
 cat > ~/backup/makebackup.sh <<EOM
-TODAY=`date "+%A"`; 
+#!/bin/sh
+TODAY=\$(date "+%A");
 flock -n ~/.mysqldump chronic n98-magerun db:dump --root-dir=~/public --no-interaction --strip @stripped ~/backup/mysql-latest.sql; 
 flock -n ~/.tarsnap.lock tarsnap -d backup-\$TODAY 2>/dev/null; 
 flock -n ~/.tarsnap.lock chronic tarsnap -c -f backup-\$TODAY ~ 
 EOM
 chmod 755 ~/backup/*.sh
-
 ```
 
 So including the database dump command above, your ```crontab -e``` would become:
 
 ```bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=yourmailadress@here
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 0 2 * * * flock -n ~/.makebackup.lock ~/backup/makebackup.sh 
