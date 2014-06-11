@@ -21,7 +21,7 @@ After [copying your site to Hypernode]({% post_url 2014-05-01-getting-started %}
 1. We will issue a re-sync of your files and data and change the DNS for your domain(s) to the new node.
     * In case of external DNS control, we will propose a specific timeslot, as the migration of data and DNS has to happen at the same time.
 
-If you find anything missing, please discuss it with us @ `hypernode@byte.nl`.
+If you find anything missing, please discuss it with us @ `support@hypernode.com`.
 
 ### Changes
 
