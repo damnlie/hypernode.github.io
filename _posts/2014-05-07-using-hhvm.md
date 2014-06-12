@@ -17,42 +17,83 @@ In your homedirectory on your Hypernode you find a directory `nginx`, which cont
 
 __NB: Every time you make a change to a file in `/data/web/nginx/`, our system will try to reload the webserver with the new configuration. If a parse error occurs and the webserver would not be able to reload, the reload is aborted. You may examine `/data/web/nginx/nginx_error_output` for errors.__
 
+__NB: nginx has a complex but [well documented](http://nginx.org/en/docs/http/ngx_http_core_module.html#location) order in which `location` directives are checked.__
+
+
+
+### Scenario 1: run your entire site in HHVM
+
 Our basic configuration dictates that each file ending with `.php` will be parsed by PHP-FPM. This is a safe default. In `handler.conf` you may specify that all files ending with `.php` should be handled by HHVM:
 
 ```
-include /etc/nginx/hhvm-handler.conf;
-```
-
-If you only want certain parts of your site to be handled by HHVM, you could use nginx' [location](http://nginx.org/en/docs/http/ngx_http_core_module.html#location) directive:
-
-```
-location /index.php/apparel/shoes.html {
-  include /etc/nginx/hhvm-handler.conf;
-}
-
-location /admin/ {
-  include /etc/nginx/hhvm-handler.conf;
+location ~ \.php$ {
+    echo_exec @hhvm;
 }
 ```
 
-You don't need to specify a handler for other pages, these will be handled by our default, php-fpm.
+### Scenario 2: run your site in HHVM, but run the API in plain PHP
 
-You could also turn this around: run the entire site in HHVM, but exclude some parts:
 
 ```
-location /checkout/ {
-  include /etc/nginx/php-handler.conf;
+# Run the API in PHP
+location /api/soap {
+    rewrite / /index.php break;
+    echo_exec @phpfpm;
 }
+# Another API location
+location ^~ /index.php/api/soap {
+    rewrite / /index.php break;
+    echo_exec @phpfpm;
+}
+# Run the rest in HHVM
+location ~ \.php$ {
+    echo_exec @hhvm;
+}
+```
 
+
+### Scenario 3: keep your site running in PHP, but run a couple of URLs in HHVM as a test
+
+```
+# The default is to run in PHP, so no need to specify that
+
+# Run these two locations in PHP
+location /apparel/hoodies.html {
+    rewrite / /index.php break;
+    echo_exec @hhvm;
+}
+location ^~ /index.php/apparel/hoodies.html {
+    rewrite / /index.php break;
+    echo_exec @hhvm;
+}
+```
+
+
+### Scenario 4: run only all PHP-files in a subdirectory in HHVM
+
+```
+# Run everything that starts with this location
 location /blog/ {
-  include /etc/nginx/php-handler.conf;
+    location ~ \.php$ {
+        echo_exec @hhvm;
+    }
 }
-
-include /etc/nginx/hhvm-handler.conf;
 ```
 
-__NB: nginx has a complex but [well documented](http://nginx.org/en/docs/http/ngx_http_core_module.html#location) order in which `location` directives are checked.__
+### Scenario 5: have your site run in HHVM, but run all PHP files in a subdirectory in plain PHP
 
+```
+# Set the default interpreter to PHP for every URL that starts with /blog/
+location /blog/ {
+    location ~ \.php$ {
+        echo_exec @phpfpm;
+    }
+}
+# But set the overall default to PHP
+location ~ \.php$ {
+    echo_exec @hhvm;
+}
+```
 
 ## Troubleshooting
 * If your change doesn't seem to work, first check that there are no (recent) errors in `/data/web/nginx/nginx_error_output`.
