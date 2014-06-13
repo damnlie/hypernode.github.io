@@ -28,7 +28,8 @@ body {
   }
 }
 
-h1 { margin-bottom: 1em; }
+h1 { margin-bottom: 1em; }
+h3 { font-size: 20px; font-style: italic; }
 p { margin: 1em 0; }
 
 a         { color: #00a; }

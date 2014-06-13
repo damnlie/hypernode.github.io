@@ -52,6 +52,8 @@ Flush the cache of magento on the hypernode. (`n98-magerun cache:flush`)
 
 ## Step 6: Change DNS records
 
+### Web records
+
 For all storefront URLS, the DNS records should be changed now. Remove all A records for your web domains, since the IP address of your hypernode might change at any time. The correct configuration is for all domain names is:
 
 ```
@@ -70,6 +72,17 @@ mydomain.com        A                 46.21.233.172
 See our manual on [configuring DNS]({% post_url 2014-02-18-configuring-dns %}) for more information.
 
 As the DNS changes are propagated, traffic will go to your hypernode.
+
+
+### SPF records (for experts)
+
+If you have previously configured SPF, you should also update your the SPF policy. You should include `_spf.hypernode.com` for all domains you choose to send mail from using Hypernode.
+
+The following example allows mail from both your mail exchangers and all your Hypernode nodes:
+
+```
+mydomain.com            TXT               v=spf1 mx:mydomain.com include:_spf.hypernode.com ~all
+```
 
 ## Step 7: Configure cron
 
