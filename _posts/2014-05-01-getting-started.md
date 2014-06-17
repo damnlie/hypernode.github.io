@@ -41,10 +41,17 @@ Congratulations, you should be the proud owner of a fresh Hypernode! Now you're 
 If anything goes wrong (authentication, error during copy), you can just run the importer again after fixing the problem.
 
 ## Optional steps
-1. If you currently have SSL certificates and your site is hosted at Byte, you should make sure you select the SSL certificate to use in the Byte [Service Panel](https://service.byte.nl/). Go to _Hypernode Settings_, then select your SSL certificate at _SSL information_.
+1. If you currently have SSL certificates and your site is hosted at
+Byte, you should make sure you select the SSL certificates to use in the
+Byte [Service Panel](https://service.byte.nl/). Go to _Hypernode
+Settings_, then select the SSL certificates you want to use with your
+node at _SSL information_.
 
 ## From here
-Wondering what the **** just happened? Or did something go wrong and you need to do something by hand? `hypernode-importer` automates steps 1 to 12 (flushing the  cache) from [this list of manual migration steps]({% post_url 2014-04-11-migrating-to-hypernode %}).
+Wondering what the **** just happened? Or did something go
+wrong and you need to do something by hand? `hypernode-importer`
+automates steps 1 to 12 (flushing the  cache) from [this list of manual
+migration steps]({% post_url 2014-04-11-migrating-to-hypernode %}).
 
 The next steps, in a nutshell, are:
 
