@@ -58,27 +58,33 @@ If anything goes wrong (authentication, error during copy), you can just run the
 If for some kind of reason the importer-script doens’t work for you (you might use a module that the importer-script isn’t compatible with) you can also migrate your site to Hypernode manually. Follow the next steps to manually migrate your site to Hypernode.
 
 
-**NB:** Make sure you change domain.com in the following steps. You should change that to the name of your domain. If you don't do that, none of the following steps will work ;-)
+**NB:** If you set some environment variables, you can follow along these instructions by copy-pasting most of the commands in this document to the command line. E.g.:
+
+```sh
+NODE=name.hypernode.io
+DOMAIN=domainname.nl
+CURRENT_SSH=$DOMAIN@ssh12345.bytenet.nl
+```
 
 1. Add the SSH public key in the [SSH Keymanager](https://service.byte.nl/sshkeymanager/) for your hypernode. Give the key access to both _appname_.hypernode.io and your current domain.
 
 2. Login to your Hypernode using SSH.
 
     ```sh
-    ssh app@name.hypernode.io
+    ssh app@$NODE
     ```
 
 3. Make sure you can login to your current domain from there.
 
     ```sh
-    ssh domain.com@ssh.domain.com
+    ssh $CURRENT_SSH
     exit
     ```
 
 4. Synchronize all files to the hypernode using rsync
 
     ```sh
-    rsync -a --exclude=/var/\*/\* --delete domain.nl@ssh.domain.nl:domain.com/ /data/web/public
+    rsync -a --exclude=/var/\*/\* --delete $CURRENT_SSH:$DOMAIN/ /data/web/public
     ```
     
     For subsequent runs, you can prevent your xml files from being overwritten by adding `--exclude=\*.xml`
@@ -121,7 +127,7 @@ If for some kind of reason the importer-script doens’t work for you (you might
 9. Copy the database:
 
     ```sh
-   ssh domain.com@ssh.domain.com "n98-magerun --root-dir=domain.com db:dump --strip='@stripped' --stdout" | n98-magerun db:console
+   ssh $CURRENT_SSH "n98-magerun --root-dir=$DOMAIN db:dump --strip='@stripped' --stdout" | n98-magerun db:console
    ```
 
 10. Remove memcache configuration from app/etc/local.xml and fix redis configuration in app/etc/local.xml and app/etc/fpc.xml.
