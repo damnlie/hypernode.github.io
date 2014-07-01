@@ -5,23 +5,44 @@ title: Hypernode User Documentation
 
 <div id="home">
   <h1>Hypernode User Documentation</h1>
-  <div class="row jumbotron">
+<div class="row jumbotron">
+	<div class="col-sm-6 col-md-6">
     <h2>Getting started</h2><br/>
     <a href="{% post_url 2014-05-01-getting-started %}">Migrate your site to Hypernode</a><br/>
-    <a href="{% post_url 2014-05-01-going-live %}">Go live with your Hypernode</a><br/> 
+    <a href="{% post_url 2014-05-01-going-live %}">Go live with your Hypernode</a><br/>
+    <a href="{% post_url 2014-02-18-configuring-dns %}">DNS Settings hypernode</a><br/>
+	</div>
+<div class="col-sm-6 col-md-6">
+    <h2>Support</h2><br/>
+    <a href="{% post_url 2014-05-23-troubleshooting %}">Troubleshooting</a><br/>
+    <a href="{% post_url 2014-06-26-faq %}">FAQ</a><br/>
+        </div>
   </div>
-  <div class="row" id="doclist">
-    <h2>All of our documentation</h2>
-    <ul class="posts">
-      {% for post in site.posts %}
-        <li>
-            <div>
-              <a href="{{ post.url }}">{{ post.title }}</a>
-              <p>{{ post.excerpt }}</p>
-            </div>
+<div class="row jumbotron">
+        <div class="col-sm-6 col-md-6">
+    <h2>Settings</h2><br/>
+    <a href="{% post_url 2014-02-12-using-mysql-on-hypernode %}">Using MySQL on Hypernode</a><br/>
+    <a href="{% post_url 2014-06-17-using-ssl-with-hypernode %}">Using SSL with Hypernode</a><br/>
+    <a href="{% post_url 2014-02-12-using-the-hypernode-application-node %}">Hypernode Application Node Manual</a><br/>
+        </div>
+      <div class="col-sm-6 col-md-6">
+    <h2>Nginx configuration</h2><br/>
+    <a href="{% post_url 2014-02-16-configuring-nginx %}">Configuring Nginx</a><br/>
+    <br/>
+        </div>
+  </div>
+<div class="row jumbotron">
+        <div class="col-sm-6 col-md-6">
+    <h2>Back-ups</h2><br/>
+    <a href="{% post_url 2014-04-07-historical-backups %}">Historical backups</a><br/>
+        </div>
+	<div class="col-sm-6 col-md-6">
+    <h2>HipHop/HHVM</h2><br/>
+    <a href="{% post_url 2014-05-07-using-hhvm %}">Using HHVM/HipHop</a><br/>
+        </div>
 
-        </li>
-      {% endfor %}
-    </ul>
   </div>
+
+
 </div>
+
