@@ -26,7 +26,7 @@ hypernode-importer --host ssh.yourdomain.com --user yourdomain.com --path yourdo
 
 The importer will not overwrite the modifications made to the local.xml or fpc.xml configuration files.
 
-If the importer doesn't work for you, you can follow the [manual steps]({% post_url 2014-04-11-migrating-to-hypernode %})
+If the importer doesn't work for you, you can follow the manual steps.
 
 If you have custom changes that need to be made to the site after copying to make it run on hypernode, now is the time to apply them.
 
