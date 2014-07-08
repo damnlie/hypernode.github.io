@@ -24,7 +24,7 @@ password = JlogA1Sws6XMHmAj7QlP9vpfjLprtpE5
     * can create your own databases;
     * create users;
     * define views and triggers.
-
+* If you want to use a GUI to work on your database we recommend using a local GUI (HeidiSQL) instead of an online GUI (PHPMyAdmin).
 
 ## How to connect to MySQL
 
@@ -65,6 +65,28 @@ Things should look like the screenshot below:
 
 ![HeidiSQL configured for Hypernode]({{ site.url }}/assets/hypernode-heidisql.png)
 
+### Using PHPMyAdmin to connect to MySQL 
+
+1. Make a new folder which you'll use to enter PHPMyAdmin; phpmyadmin.
+1. Navigate to the newly created folder and use the the next bash command:
+
+   ```sh
+   wget http://sourceforge.net/projects/phpmyadmin/files/phpMyAdmin/4.2.5/phpMyAdmin-4.2.5-all-languages.tar.gz
+    ```
+
+1. Use the next command to extract the files from the .tar.gz file:
+
+ ```sh
+   tar -zxvf phpMyAdmin-4.2.5-all-languages.tar.gz
+    ```
+
+1. Move all folders from the newly created folder to the phpmyadmin folder.
+1. Delete the phpMyAdmin-4.2.5-all-languages.tar.gz file and phpMyAdmin-4.2.5-all-languages folder.
+1. Copy the config.sample.inc.php file and rename it to config.inc.php
+1. Open the file and change your database host setting.
+1. Open your internet browser and navigate to domain.hypernode.io/phpmyadmin.
+1. Use your database credentials (.my.cnf holds all these secrets) to enter PHPMyAdmin.
+
 
 ## Creating a MySQL backup
 
@@ -95,3 +117,10 @@ You should consider using Magerun (see above), but you could use HeidiSQL to cre
 5. Choose a filename to export to.
 6. Choose appropriate options, notably `data`.
 7. Press Export.
+
+### Using PHPMyAdmin
+
+1. Go To domain.hypernode.io/phpmyadmin
+2. Click on "Databases" and select the database.
+3. Click on "Export".
+4. Click on "Go" and the export/backup will be available.
