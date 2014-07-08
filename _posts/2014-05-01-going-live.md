@@ -86,6 +86,8 @@ mydomain.com            TXT               v=spf1 mx:mydomain.com include:_spf.hy
 
 Configure cron jobs to run on your hypernode (`crontab -e`), and configure them not to run on your old host (`crontab -ir`).
 
+Hypernode does not provide lockrun but uses [flock](http://linux.die.net/man/1/flock). Replace `lockrun -L` by `flock -n` to make sure that long running cron jobs don't run twice.
+
 Note that the time on hypernode is configured to UTC, so the times used in the crontab are one or two hours later than central european time.
 
 ## Optional Step 8: Configure historic backups on hypernode
