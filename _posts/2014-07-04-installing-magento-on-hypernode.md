@@ -11,15 +11,7 @@ You don't have a Magento shop yet to migrate to Hypernode? We've got ya covered,
 ## Create a new database
 
 The first step should be to create a database in which Magento can store all it's data in. Luckily for you there is a file where most of the database credentialsis is already stored; .my.cnf. 
-Open the .cnf file to see which host, user and password you should use. With this information you can use the following bash command:
-
-```sh
-   mysql --host=mysqlmaster.<tagname>.hypernode.io --user=app --password=mypassword
-  ```
-
-**NB:** Make sure you change the "mysqlmaster.<tagname>.hypernode.io" and "mypassword" parts with what's in your .my.cnf file
-
-Next step is to create a database. You can do this by using the next command:
+So you only need to use the "mysql" command to connect to MySQL. Next step is to create a database. You can do this by using the next command:
 
 ```sh
    CREATE DATABASE DATABASENAME  
