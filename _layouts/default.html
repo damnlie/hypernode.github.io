@@ -21,8 +21,7 @@
 
 <div class="site">
     <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -32,8 +31,6 @@
                 </button>
                 <a class="navbar-brand" href="http://support.hypernode.com"><img src="/images/hypernode-logo.png"/></a>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="http://www.hypernode.com">Overview</a></li>
@@ -41,27 +38,55 @@
                     <li><a href="https://hypernode.uservoice.com/forums/242854-hypernode/" target="_blank">Feedback</a></li>
                     <li><a href="http://www.byte.nl/blog/tag/hypernode/" target="_blank">Blog (NL)</a></li>
                 </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+            </div>
+        </div>
     </nav>
 
-    {{ content }}
+    <aside id="search" class="row" role="search">
+        <div class="container">
+            <div class="col-md-8 col-sm-12">
+                <script>
+                  (function() {
+                    var cx = '013347146518478411263:sjrb91jlxra';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                        '//www.google.com/cse/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                  })();
+                </script>
+                <gcse:search></gcse:search>
+            </div>
+        </div>
+    </aside>
 
-    <div class="footer">
-        <div class="contact">
-            Hypernode by <a href="http://www.byte.nl"><img id="contact-logo" src="/images/byte.svg"/></a>
-            <a href="http://support.hypernode.com/hypernode-product-policies.html">Hypernode Product Policy</a>
+    <section id="content" class="row" role="main">
+        <div class="container">
+            <div class="col-xs-12">
+                {{ content }}
+            </div>
         </div>
-        {% if page.categories %}
-        <div class="pull-right" id="categories">
-            <ul>Categories:
-                {% for category in page.categories %}
-                    <li>{{ category }}</li>
-                {% endfor %}
-            </ul>
+    </section>
+
+    <footer class="row">
+        <div class="container">
+            <div class="col-sm-8 contact">
+                Hypernode by <a href="http://www.byte.nl"><img id="contact-logo" src="/images/byte.svg"/></a>
+                <a href="http://support.hypernode.com/hypernode-product-policies.html">Hypernode Product Policy</a>
+            </div>
+            {% if page.categories %}
+            <div class="col-sm-4" id="categories">
+                <ul>Categories:
+                    {% for category in page.categories %}
+                        <li>{{ category }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
         </div>
-        {% endif %}
-    </div>
+    </footer>
 </div>
 
 <!-- Latest compiled and minified JavaScript -->
