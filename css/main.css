@@ -250,3 +250,11 @@ a:visited { color: #a0a; }
     margin-top: 20px;
 }
 
+/*****************************************************************************/
+/*
+/* Google CSE
+/*
+/*****************************************************************************/
+.cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2 {
+    box-sizing: content-box;
+}
