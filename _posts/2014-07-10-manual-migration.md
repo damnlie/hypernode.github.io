@@ -7,7 +7,8 @@ excerpt: "Migrating your application manually to your Hypernode"
 ---
 
 
-If for some kind of reason the importer-script doens’t work for you (you might use a module that the importer-script isn’t compatible with) you can also migrate your site to Hypernode manually. Follow the$
+If for some kind of reason the importer-script doens’t work for you (you might use a module that the importer-script isn’t compatible with) you can also migrate your site to Hypernode manually. Follow the
+next steps to manually migrate Magento to Hypernode.
 
 
 **NB:** If you set some environment variables, you can follow along these instructions by copy-pasting most of the commands in this document to the command line. E.g.:
