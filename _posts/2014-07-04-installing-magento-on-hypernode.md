@@ -103,7 +103,7 @@ Follow these steps to change your caching backend to Redis:
 
 ## Optional: configure Lesti::FPC
 
-If you'd like to use Lesti::FPC on Fypernode, please follow the next steps:
+If you'd like to use Lesti::FPC on Hypernode, please follow the next steps:
 
 1. Go to your public folder; /data/web/public
 
